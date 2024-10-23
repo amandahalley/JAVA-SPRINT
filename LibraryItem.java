@@ -75,13 +75,11 @@ public void setCopies(int copies) {
 
  //Print format for Library items details
  public String toString() {
-    return "LibraryItem{" +
-                "id ='" + id + '\'' +
+    return      "ID ='" + id + '\'' +
                 ", title ='" + title + '\'' +
                 ", author ='" + author + '\'' +
                 ", ISBN ='" + isbn + '\'' +
                 ", publisher ='" + publisher + '\'' +
-                ", numberOfCopies =" + copies +
-                '}';
+                ", numberOfCopies =" + copies;
  }
 }
