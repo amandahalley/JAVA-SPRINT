@@ -8,12 +8,13 @@ public class LibraryItem {
  private int copies;
 
  //Constructor 
- public LibraryItem(String id, String title, String author, String isbn, String publisher, String copies) {
+ public LibraryItem(String id, String title, String author, String isbn, String publisher, int copies) {
     this.id = id;
     this.title = title;
     this.author = author;
     this.isbn = isbn;
     this.publisher = publisher;
+    this.copies = copies;
  }
 
  //Getters and Setters
@@ -72,5 +73,15 @@ public void setCopies(int copies) {
     this.copies = copies;
 }
 
- 
+ //Print format for Library items details
+ public String toString() {
+    return "LibraryItem{" +
+                "id ='" + id + '\'' +
+                ", title ='" + title + '\'' +
+                ", author ='" + author + '\'' +
+                ", ISBN ='" + isbn + '\'' +
+                ", publisher ='" + publisher + '\'' +
+                ", numberOfCopies =" + copies +
+                '}';
+ }
 }
