@@ -16,6 +16,28 @@ public class LibraryItem {
     this.publisher = publisher;
  }
 
+ //Getters and Setters
+
+ //ID
+ public String getID() {
+    return id;
+ }
+
+ public void setID(String id) {
+    this.id = id;
+ }
+
+ //Title
+ public String getTitle() {
+    return title;
+ }
+
+ public void setTitle(String title) {
+    this.title = title;
+ }
+
+ 
+
 
  
 }
