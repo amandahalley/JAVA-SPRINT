@@ -63,6 +63,14 @@ public class LibraryItem {
     this.publisher = publisher;
  }
 
+//Copies
+public int getCopies() {
+    return copies;
+}
+
+public void setCopies(int copies) {
+    this.copies = copies;
+}
 
  
 }
