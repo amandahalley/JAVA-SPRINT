@@ -36,7 +36,32 @@ public class LibraryItem {
     this.title = title;
  }
 
- 
+ //Author
+ public String getAuthor() {
+    return author;
+ }
+
+ public void setAuthor(String author) {
+    this.author = author;
+ }
+
+ //ISBN
+ public String getISBN() {
+    return isbn;
+ }
+
+ public void setISBN(String isbn) {
+    this.isbn = isbn;
+ }
+
+ //Publisher
+ public String getPublisher() {
+    return publisher;
+ }
+
+ public void setPublisher(String publisher) {
+    this.publisher = publisher;
+ }
 
 
  
