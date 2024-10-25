@@ -29,7 +29,7 @@ public class Book extends LibraryItem {
 
     @Override
     public String toString() {
-        return super.toString() + ", format = '" + format; 
+        return super.toString() + ", format = '" + format + '\''; 
     }
 
 
