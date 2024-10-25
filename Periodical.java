@@ -12,7 +12,14 @@ public class Periodical extends LibraryItem {
    }
 
    public String getFormat() {
-    return format();
+    return format;
+   }
+
+   public void setFormat(String format) {
+    if (!format.equals(Printed) && !format.equals(Electronic)) {
+        throw new IllegalArgumentException("Invalid format. Must be Printed or Electronic.");
+    }
+    this.format = format;
    }
 
 }
