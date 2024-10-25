@@ -22,4 +22,9 @@ public class Periodical extends LibraryItem {
     this.format = format;
    }
 
+   // print format
+   @Override
+    public String toString() {
+        return super.toString() + ", format = '" + format + '\''; 
+    }
 }
