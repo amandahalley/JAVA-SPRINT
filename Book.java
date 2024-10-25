@@ -6,9 +6,9 @@ public class Book extends LibraryItem {
     private String format;
 
     //Constructor 
-    public Book(String ID, String title, String author, String isbn, String publisher, int copies, String format) {
+    public Book(String id, String title, String author, String isbn, String publisher, int copies, String format) {
         //Calling constructor of LibraryItem (superclass) and setting format of book
-        super(ID, title, author, isbn, publisher, copies);
+        super(id, title, author, isbn, publisher, copies);
         setFormat(format);
     }
 
@@ -19,18 +19,19 @@ public class Book extends LibraryItem {
 
     //set format wit validation
     public void setFormat(String format) {
-        if (format.equals(Printed) || format.equals(Audio) || format.equals(Electronic)) {
-            this.format = format;
-        } else {
-            throw new IllegalArgumentException("Invalid format, must be Printed, Audio or Electronic. ");
+        if (!format.equals(Printed) && !format.equals(Electronic) && !format.equals(Audio)) {
+            throw new IllegalArgumentException("Invalid format. Must be Printed, Electronic, or Audio.");
         }
-    }
+        this.format = format;
+    };
+
+    
 
     @Override
     public String toString() {
-        return super.toString() + ", format='" + format; 
+        return super.toString() + ", format = '" + format; 
     }
 
 
-}
+};
 
