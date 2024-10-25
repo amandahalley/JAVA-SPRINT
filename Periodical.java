@@ -17,7 +17,7 @@ public class Periodical extends LibraryItem {
 
    public void setFormat(String format) {
     if (!format.equals(Printed) && !format.equals(Electronic)) {
-        throw new IllegalArgumentException("Invalid format. Must be Printed or Electronic.");
+        throw new IllegalArgumentException("Invalid format - Must be Printed or Electronic.");
     }
     this.format = format;
    }
