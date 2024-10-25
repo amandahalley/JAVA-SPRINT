@@ -8,8 +8,7 @@ public class Periodical extends LibraryItem {
     //Calling libraryItem constructor (superclass) and setting format
     super(id, title, author, isbn, publisher, copies);
     setFormat(format);
-
-   }
+    }
 
    public String getFormat() {
     return format;
