@@ -20,7 +20,7 @@ public class Book extends LibraryItem {
     //set format wit validation
     public void setFormat(String format) {
         if (!format.equals(Printed) && !format.equals(Electronic) && !format.equals(Audio)) {
-            throw new IllegalArgumentException("Invalid format. Must be Printed, Electronic, or Audio.");
+            throw new IllegalArgumentException("Invalid format - Must be Printed, Electronic, or Audio.");
         }
         this.format = format;
     };
