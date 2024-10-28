@@ -1,10 +1,12 @@
 // Midterm Sprint - 2024
 // Authors - Ryan Tibbo, Tyler Wall, Amanda Halley
+package People;
 
+import Library.LibraryItem;
 import java.util.ArrayList;
 import java.util.List;
 
-class Author {
+public class Author {
     private String name;
     private String birthday;
     private List<LibraryItem> items;
