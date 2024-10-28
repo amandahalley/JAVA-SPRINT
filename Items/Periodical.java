@@ -1,3 +1,6 @@
+package Items;
+import Library.LibraryItem;
+
 public class Periodical extends LibraryItem {
     private String Printed = "Printed";
     private String Electronic = "Electronic";

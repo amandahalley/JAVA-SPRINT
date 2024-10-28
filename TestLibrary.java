@@ -1,3 +1,7 @@
+import Items.Book;
+import Items.Periodical;
+import Library.LibraryItem;
+
 public class TestLibrary {
     public static void main(String[] args) {
         
