@@ -1,5 +1,8 @@
+import java.util.List;
+
 import Items.Book;
 import Items.Periodical;
+import People.Author;
 import Library.LibraryItem;
 
 public class TestLibrary {
@@ -31,6 +34,17 @@ public class TestLibrary {
         } catch (IllegalArgumentException e) {
             System.out.println("Test failed" + e.getMessage()); //should catch error s
         }
+
+        //Testing addWrittenItem method from Author class
+        Author author = new Author("Tyler Wall", "February 14, 1998");
+        LibraryItem writtenItem = new LibraryItem("4", "BFG", "Tyler Wall", "1780134124494", "John Doe", 9);
+
+        author.addWrittenItem(writtenItem);
+        List<LibraryItem> writtenItems = author.getWrittenItems();
+
+        System.out.println();
+        System.out.println("Author's written items after adding one item:");
+        System.out.println(writtenItems);
 
     };
 };

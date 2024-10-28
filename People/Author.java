@@ -36,4 +36,22 @@ public class Author {
     public void removeWrittenItem(LibraryItem item) {
         items.remove(item);
     }
+
+    @Override
+    public String toString() {
+        StringBuilder itemsList = new StringBuilder();
+        for (LibraryItem item : items) {
+            itemsList.append(item.toString()).append(", ");
+        }
+        
+        if (itemsList.length() > 0) {
+            itemsList.setLength(itemsList.length() - 2);
+        }
+
+        return "Author{" +
+               "name='" + name + '\'' +
+               ", birthday='" + birthday + '\'' +
+               ", writtenItems=[" + itemsList.toString() + "]" +
+               '}';
+    }
 }
