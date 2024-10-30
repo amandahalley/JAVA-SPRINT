@@ -60,8 +60,8 @@ public class Library {
         System.out.println("Item ID: " + itemID + "not found.");
         return false; 
     }
-// Patron management methods
-public void addPatron(Patron patron) {
+    // Patron management methods
+    public void addPatron(Patron patron) {
     if (patron != null) {
         patrons.add(patron);
         System.out.println("Name successfully added: " + patron.getName());
@@ -69,16 +69,41 @@ public void addPatron(Patron patron) {
         System.out.println("Could not add name. Please try again.");
     }
 }
-
-
-// Author management methods
-public void addAuthor(Author author) {
-    if (author != null) {
-        authors.add(author);
-        System.out.println("Author successfully added: " + author.getName());
-    } else {
-        System.out.println("Could not add author. Please try again.");
+    // Delete patron from collection
+    public boolean deletePatron(String patronName) {
+        for (Patron patron : patrons) { // Cycle through patrons list to find a matching name
+            if (patron.getName().equalsIgnoreCase(patronName)) {
+                patrons.remove(patron);
+                System.out.println("Patron successfully deleted: " + patron.getName());
+                return true;
+        }
     }
+    // Print statement if the patron is not found
+    System.out.println("Patron with name: " + patronName + " not found.");
+    return false;
+}
+
+    // Author management methods
+    public void addAuthor(Author author) {
+        if (author != null) {
+            authors.add(author);
+        System.out.println("Author successfully added: " + author.getName());
+        } else {
+        System.out.println("Could not add author. Please try again.");
+        }
+}
+    // Delete author from collection
+    public boolean deleteAuthor(String authorName) {
+        for (Author author : authors) { // Cycle through authors list to find a matching name
+            if (author.getName().equalsIgnoreCase(authorName)) {
+                authors.remove(author);
+                System.out.println("Author successfully deleted: " + author.getName());
+                return true;
+        }
+    }
+    // Print statement if the author is not found
+    System.out.println("Author with name: " + authorName + " not found.");
+    return false;
 }
 
 
