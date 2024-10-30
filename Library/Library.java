@@ -50,7 +50,7 @@ public class Library {
     //Delete item from collection
     public boolean deleteItem(String itemID) {
         for (LibraryItem item : items) { //cycles through items finding matching id, if id matches item is removed
-            if (item.getID().equals(item)) {
+            if (item.getID().equals(itemID)) {
                 items.remove(item);
                 System.out.println("Item successfully deleted: " + item.getTitle());
                 return true;
@@ -60,7 +60,42 @@ public class Library {
         System.out.println("Item ID: " + itemID + "not found.");
         return false; 
     }
+    
+    //Search methods
+    //Search by title
+    public List<LibraryItem> searchByTitle(String title) {
+        List<LibraryItem> foundItems = new ArrayList<>(); //create list for matching items
+        for (LibraryItem item : items) { //cycle through items
+            if(item.getTitle().equalsIgnoreCase(title)) { //check if title matches
+                foundItems.add(item); // add item to list
+            }
+        }
+        return foundItems; //return list of found items
+    }
+
+    //Search by author
+    public List<LibraryItem> searchByAuthor(String authorName) {
+        List<LibraryItem> foundItems = new ArrayList<>(); //create list for matching items
+        for (LibraryItem item : items) { //cycle through items
+            if (item.getAuthor().equalsIgnoreCase(authorName)) { //check for author match
+                foundItems.add(item); //add match to list
+            }
+        }
+        return foundItems; //return list of found items
+    }
+
+    //Search by ISBN
+    public LibraryItem searchByISBN(String isbn) {
+        for (LibraryItem item : items) { // cycle through items
+            if (item.getISBN().equals(isbn)) { // check if isbn matches
+                return item; // return match
+            }
+        }
+        return null; //If no item is found by isbn
+    }
+    
     // Patron management methods
+    // Add Patron to collection
     public void addPatron(Patron patron) {
     if (patron != null) {
         patrons.add(patron);
@@ -69,6 +104,7 @@ public class Library {
         System.out.println("Could not add name. Please try again.");
     }
 }
+    
     // Delete patron from collection
     public boolean deletePatron(String patronName) {
         for (Patron patron : patrons) { // Cycle through patrons list to find a matching name
@@ -84,6 +120,7 @@ public class Library {
 }
 
     // Author management methods
+    // Add author to collection
     public void addAuthor(Author author) {
         if (author != null) {
             authors.add(author);
@@ -92,6 +129,7 @@ public class Library {
         System.out.println("Could not add author. Please try again.");
         }
 }
+    
     // Delete author from collection
     public boolean deleteAuthor(String authorName) {
         for (Author author : authors) { // Cycle through authors list to find a matching name
@@ -105,6 +143,9 @@ public class Library {
     System.out.println("Author with name: " + authorName + " not found.");
     return false;
 }
+
+
+    //Borrow/Return methods
 
 
 
