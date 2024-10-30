@@ -1,5 +1,6 @@
 package Library;
-// imports to be added
+import People.Author;
+import People.Patron;
 
 import java.util.ArrayList;
 import java.util.List;
