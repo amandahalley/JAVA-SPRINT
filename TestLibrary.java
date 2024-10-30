@@ -60,7 +60,7 @@ public class TestLibrary {
         boolean editResult = library.editItem("1", updatedItem);
         System.out.println("Edit successful: " + editResult);
 
-        //testing deleteItem method
+        //Testing deleteItem method 
         boolean deleteResult = library.deleteItem("1");
         System.out.println("Delete successful: " + deleteResult);
         
