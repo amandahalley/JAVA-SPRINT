@@ -16,7 +16,7 @@ public class Library {
     };
 
 
-    //Item management methods
+    //Item management methods:
     //Add item - adds item to the collection, if left empty error message occurs.
     public void addItem(LibraryItem item) {
         if (item != null) {
@@ -61,7 +61,7 @@ public class Library {
         return false; 
     }
     
-    //Search methods
+    //Search methods:
     //Search by title
     public List<LibraryItem> searchByTitle(String title) {
         List<LibraryItem> foundItems = new ArrayList<>(); //create list for matching items
@@ -94,7 +94,7 @@ public class Library {
         return null; //If no item is found by isbn
     }
     
-    // Patron management methods
+    // Patron management methods:
     // Add Patron to collection
     public void addPatron(Patron patron) {
     if (patron != null) {
@@ -142,13 +142,20 @@ public class Library {
     // Print statement if the author is not found
     System.out.println("Author with name: " + authorName + " not found.");
     return false;
-}
+    }
 
 
-    //Borrow/Return methods
-
-
-
-
-
+    //A method to list all of the items in the Library
+    public void listAllItems() {
+        //if there are no items currently in library - print statement saying so
+        if (items.isEmpty()) {
+            System.out.println("There are no items currently in the Library.");
+        } else {
+            //Loop through list of all items currently in Library and print them all
+            System.out.println("Libary Inventory: ");
+            for (LibraryItem item : items) {
+                System.out.println(item);
+            }
+        }
+    }
 };
