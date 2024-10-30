@@ -1,6 +1,6 @@
 package Library;
 import People.Author;
-// import People.Patron;
+import People.Patron;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +9,7 @@ public class Library {
     //Creating lists specifying what objects each list can hold 
     private List <LibraryItem> items = new ArrayList<>(); //List of LibraryItem (Books and Periodicals)
     private List <Author> authors = new ArrayList<>(); //List of Authors 
-    // private List <Patron> patrons = new ArrayList<>(); //List of Patrons (Students or Employees)
+    private List <Patron> patrons = new ArrayList<>(); //List of Patrons (Students or Employees)
 
 
     public Library() { // empty consturctor as lists have already been initialized 
@@ -60,5 +60,27 @@ public class Library {
         System.out.println("Item ID: " + itemID + "not found.");
         return false; 
     }
+// Patron management methods
+public void addPatron(Patron patron) {
+    if (patron != null) {
+        patrons.add(patron);
+        System.out.println("Name successfully added: " + patron.getName());
+    } else {
+        System.out.println("Could not add name. Please try again.");
+    }
+}
+// Author management methods
+public void addAuthor(Author author) {
+    if (author != null) {
+        authors.add(author);
+        System.out.println("Author successfully added: " + author.getName());
+    } else {
+        System.out.println("Could not add author. Please try again.");
+    }
+}
+
+
+
+
 
 };
