@@ -3,6 +3,7 @@ import java.util.List;
 import Items.Book;
 import Items.Periodical;
 import People.Author;
+import People.Patron;
 import Library.LibraryItem;
 import Library.Library;
 
@@ -49,6 +50,12 @@ public class TestLibrary {
         System.out.println("Author's written items after adding one item:");
         System.out.println(writtenItems);
 
+        // Testing Patron class
+        Patron patron = new Patron("Ryan Tibbo", "123 Fourth Street", "234-5678");
+
+        System.out.println();
+        System.out.println("Patron Details:");
+        System.out.println(patron);
 
         //Testing addItem method
         System.out.println();

@@ -69,6 +69,8 @@ public void addPatron(Patron patron) {
         System.out.println("Could not add name. Please try again.");
     }
 }
+
+
 // Author management methods
 public void addAuthor(Author author) {
     if (author != null) {
