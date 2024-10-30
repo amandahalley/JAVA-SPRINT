@@ -4,10 +4,13 @@ import Items.Book;
 import Items.Periodical;
 import People.Author;
 import Library.LibraryItem;
+import Library.Library;
 
 public class TestLibrary {
     public static void main(String[] args) {
         
+        Library library = new Library();
+
         //Testing for constructor and toString method 
         LibraryItem item = new LibraryItem("1", "Book Title", "Amanda Halley", "9780134685991", "John Doe", 3);
 
@@ -46,6 +49,21 @@ public class TestLibrary {
         System.out.println("Author's written items after adding one item:");
         System.out.println(writtenItems);
 
+
+        //Testing addItem method
+        System.out.println();
+        library.addItem(item);
+        library.addItem(writtenItem);
+        
+        //Testing editItem method
+        LibraryItem updatedItem = new LibraryItem("1", "Updated Title", "Amanda Halley", "9780134685991", "John Doe", 5);
+        boolean editResult = library.editItem("1", updatedItem);
+        System.out.println("Edit successful: " + editResult);
+
+        //testing deleteItem method
+        boolean deleteResult = library.deleteItem("1");
+        System.out.println("Delete successful: " + deleteResult);
+        
     };
 };
 
