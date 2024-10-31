@@ -58,8 +58,60 @@ public class LibraryDemo {
                     break;
                 case 2:
                     System.out.println("Editing an existing library item...");
-                    // Add logic to edit a library item
+                    System.out.print("Enter the ID of the library item to edit: ");
+                    String editID = scanner.nextLine();
+    
+                    // Search for the library item by ID
+                    LibraryItem itemToEdit = null;
+                    for (LibraryItem item : library.getItems()) { // Assuming library has a getItems() method
+                        if (item.getID().equals(editID)) {
+                            itemToEdit = item;
                     break;
+                    }
+                 }
+    
+                    // Check if the item was found
+                    if (itemToEdit != null) {
+                        System.out.println("Item found: " + itemToEdit.getTitle());
+                        
+                        // Display current details and prompt for new values
+                        System.out.print("Enter new title (current: " + itemToEdit.getTitle() + "): ");
+                        String newTitle = scanner.nextLine();
+                        if (!newTitle.isEmpty()) {
+                            itemToEdit.setTitle(newTitle);
+                        }
+                        
+                        System.out.print("Enter new author (current: " + itemToEdit.getAuthor() + "): ");
+                        String newAuthor = scanner.nextLine();
+                        if (!newAuthor.isEmpty()) {
+                            itemToEdit.setAuthor(newAuthor);
+                        }
+
+                        System.out.print("Enter new ISBN (current: " + itemToEdit.getISBN() + "): ");
+                        String newISBN = scanner.nextLine();
+                        if (!newISBN.isEmpty()) {
+                            itemToEdit.setISBN(newISBN);
+                        }
+                        
+                        System.out.print("Enter new publisher (current: " + itemToEdit.getPublisher() + "): ");
+                        String newPublisher = scanner.nextLine();
+                        if (!newPublisher.isEmpty()) {
+                            itemToEdit.setPublisher(newPublisher);
+                        }
+                        
+                        System.out.print("Enter new total copies (current: " + itemToEdit.getCopies() + "): ");
+                        String newCopiesStr = scanner.nextLine();
+                        if (!newCopiesStr.isEmpty()) {
+                            int newCopies = Integer.parseInt(newCopiesStr);
+                            itemToEdit.setCopies(newCopies);
+                        }
+                        
+                        System.out.println("Library item updated successfully!");
+                    } else {
+                        System.out.println("Item with ID " + editID + " not found.");
+                    }
+                    break;
+
                 case 3:
                     System.out.println("Deleting a library item...");
                     // Add logic to delete a library item
