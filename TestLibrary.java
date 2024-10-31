@@ -70,6 +70,21 @@ public class TestLibrary {
         //Testing deleteItem method 
         boolean deleteResult = library.deleteItem("1");
         System.out.println("Delete successful: " + deleteResult);
+
+        //Testing findAuthorByName method
+        System.out.println();
+        library.addAuthor(author); 
+        Author foundAuthor = library.findAuthorByName("Tyler Wall");
+        if (foundAuthor != null) {
+            System.out.println("Found author: " + foundAuthor.getName());
+        } else {
+            System.out.println("Author not found.");
+        }
+
+        //Testing deleteAuthor method
+        System.out.println();
+        boolean deleteAuthorResult = library.deleteAuthor("Tyler Wall");
+        System.out.println("Delete author successful: " + deleteAuthorResult);
         
     };
 };
