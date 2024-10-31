@@ -264,11 +264,19 @@ public class LibraryDemo {
                         System.out.println("Patron not found.");
                     }
                     break;
-
-
-
-
-
+                case 16:
+                    System.out.print("Enter the name of the patron to delete: ");
+                    String deletePatronName = scanner.nextLine();
+                    if (library.deletePatron(deletePatronName)) {
+                        System.out.println("Patron deleted successfully.");
+                    } else {
+                        System.out.println("Patron not found.");
+                    }
+                    break;
+                case 17:
+                    System.out.println("Exiting the system. Goodbye!");
+                    scanner.close();
+                    return; // Exit the program
 
             }
         } while (choice != 17);
