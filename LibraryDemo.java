@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.Scanner;
 
+import Items.Book;
 import Library.Library;
 import Library.LibraryItem;
 import People.Author;
@@ -10,6 +11,10 @@ public class LibraryDemo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Library library = new Library();
+
+        // Predefined data
+        initializeLibraryData(library);
+
         int choice;
 
         do {
@@ -37,6 +42,7 @@ public class LibraryDemo {
             System.out.print("Enter your choice (1-17): ");
             choice = scanner.nextInt();
             scanner.nextLine();
+
 
             switch (choice) {
                 case 1:
@@ -282,5 +288,25 @@ public class LibraryDemo {
         } while (choice != 17);
 
         scanner.close();
+    }
+
+    private static void initializeLibraryData(Library library) {
+        // Create and add some library items
+        LibraryItem item1 = new Book("1", "Effective Java", "Joshua Bloch", "9780134686097", "Addison-Wesley", 5, null);
+        LibraryItem item2 = new Book("2", "Clean Code", "Robert C. Martin", "9780136083238", "Prentice Hall", 3, null);
+        library.addItem(item1);
+        library.addItem(item2);
+
+        // Create and add some authors
+        Author author1 = new Author("Joshua Bloch", "1961-08-28");
+        Author author2 = new Author("Robert C. Martin", "1952-12-05");
+        library.addAuthor(author1);
+        library.addAuthor(author2);
+
+        // Create and add some patrons
+        Patron patron1 = new Patron("Alice Smith", "123 Main St", "555-1234");
+        Patron patron2 = new Patron("Bob Johnson", "456 Elm St", "555-5678");
+        library.addPatron(patron1);
+        library.addPatron(patron2);
     }
 }
