@@ -1,8 +1,12 @@
 import java.util.Scanner;
 
+import Library.Library;
+import Library.LibraryItem;
+
 public class LibraryDemo {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        Library library = new Library();
         int choice;
 
         do {
@@ -29,27 +33,28 @@ public class LibraryDemo {
             System.out.println("17. Exit");
             System.out.print("Enter your choice (1-17): ");
             choice = scanner.nextInt();
+            scanner.nextLine();
 
             switch (choice) {
                 case 1:
                     System.out.println("Adding a new library item...");
                     // Add logic to add a library item
-                    System.out.println("Enter the type of Library item?: ");
-                    String itemType = scanner.nextLine();
-
+                    System.out.println("Enter ID: ");
+                    String ID = scanner.nextLine();
                     System.out.print("Enter Title: ");
                     String title = scanner.nextLine();
+                    System.out.print("Enter Author: ");
+                    String author = scanner.nextLine();
                     System.out.print("Enter ISBN: ");
                     String ISBN = scanner.nextLine();
                     System.out.print("Enter publisher: ");
                     String publisher = scanner.nextLine();
                     System.out.print("Enter total copies: ");
-                    int totalCopies = scanner.nextInt();
-                    System.out.print("Enter available copies: ");
-                    int availableCopies = scanner.nextInt();
+                    int copies = scanner.nextInt();
                     scanner.nextLine();
-                    LibraryItem libraryItem = new LibraryItem(title,ISBN,publisher,availableCopies)
-
+                    LibraryItem libraryItem = new LibraryItem(ID, title, author, ISBN, publisher, copies);
+                    library.addItem(libraryItem);
+                    
                     break;
                 case 2:
                     System.out.println("Editing an existing library item...");
