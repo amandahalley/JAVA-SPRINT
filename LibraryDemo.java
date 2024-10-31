@@ -13,8 +13,21 @@ public class LibraryDemo {
             System.out.println("3. Delete Library Item");
             System.out.println("4. Borrow Library Item");
             System.out.println("5. Return Library Item");
-            System.out.println("6. Exit");
-            System.out.print("Enter your choice (1-6): ");
+            System.out.println("6. List all Library Items");
+            System.out.println("7. Search Library Item by Title");
+            System.out.println("8. Search Library Item by Author");
+            System.out.println("9. Search Library Item by ISBN");
+            System.out.println("10. List all Borrowed Items for a Patron");
+            System.out.println("11. Add Author");
+            System.out.println("12. Edit Author");
+            System.out.println("13. Delete Author");
+            System.out.println("14. Add Patron");
+            System.out.println("15. Edit Patron");
+            System.out.println("16. Delete Patron");
+
+
+            System.out.println("17. Exit");
+            System.out.print("Enter your choice (1-17): ");
             choice = scanner.nextInt();
 
             switch (choice) {
