@@ -112,7 +112,48 @@ public boolean borrowItem(String title, String patronName) {
     return true;
 }
 
+    // Method for a patron to return a library item
+    public boolean returnItem(String title, String patronName) {
+        // Find the patron by name
+        Patron returningPatron = null;
+        for (Patron patron : patrons) {
+            if (patron.getName().equalsIgnoreCase(patronName)) {
+                returningPatron = patron;
+                break;
+            }
+        }
 
+        // Check if the patron was found
+        if (returningPatron == null) {
+            System.out.println("Patron not found: " + patronName);
+            return false;
+        }
+
+        // Find the borrowed item in the patron's list
+        LibraryItem itemToReturn = null;
+        for (LibraryItem item : returningPatron.getBorrowedItems()) {
+            if (item.getTitle().equalsIgnoreCase(title)) {
+                itemToReturn = item;
+                break;
+            }
+        }
+
+        // Check if the item was found
+        if (itemToReturn == null) {
+            System.out.println("Item not found in borrowed list: " + title);
+            return false;
+        }
+
+        // Update the item copies and remove the item from the patron's borrowed list
+        itemToReturn.setCopies(itemToReturn.getCopies() + 1);
+        returningPatron.getBorrowedItems().remove(itemToReturn);
+
+        System.out.println("Item '" + title + "' successfully returned by " + patronName);
+        return true;
+    }
+
+
+    
 
     //Search methods:
     //Search by title

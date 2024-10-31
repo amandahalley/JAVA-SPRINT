@@ -126,8 +126,11 @@ public class LibraryDemo {
                     break;
 
                 case 5:
-                    System.out.println("Returning a library item...");
-                    // Add logic to return a library item
+                    System.out.print("Enter the title of the item to return: ");
+                    String returnTitle = scanner.nextLine();
+                    System.out.print("Enter the name of the patron returning the item: ");
+                    String returnPatronName = scanner.nextLine();
+                    library.returnItem(returnTitle, returnPatronName);
                     break;
                 case 6:
                     System.out.println("Exiting the system. Goodbye!");
