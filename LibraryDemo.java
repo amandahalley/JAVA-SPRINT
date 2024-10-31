@@ -118,9 +118,13 @@ public class LibraryDemo {
                     break;
 
                 case 4:
-                    System.out.println("Borrowing a library item...");
-                    // Add logic to borrow a library item
+                    System.out.print("Enter the title of the item to borrow: ");
+                    String borrowTitle = scanner.nextLine();
+                    System.out.print("Enter the name of the patron borrowing the item: ");
+                    String patronName = scanner.nextLine();
+                    library.borrowItem(borrowTitle, patronName);
                     break;
+
                 case 5:
                     System.out.println("Returning a library item...");
                     // Add logic to return a library item

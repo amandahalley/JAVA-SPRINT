@@ -72,6 +72,48 @@ public class Library {
         return false; 
     }
     
+    // Method for a patron to borrow a library item
+public boolean borrowItem(String title, String patronName) {
+    // Find the item by title
+    LibraryItem itemToBorrow = null;
+    for (LibraryItem item : items) {
+        if (item.getTitle().equalsIgnoreCase(title) && item.getCopies() > 0) {
+            itemToBorrow = item;
+            break;
+        }
+    }
+
+    // Check if the item was found and has available copies
+    if (itemToBorrow == null) {
+        System.out.println("Item not available for borrowing: " + title);
+        return false;
+    }
+
+    // Find the patron by name
+    Patron borrowingPatron = null;
+    for (Patron patron : patrons) {
+        if (patron.getName().equalsIgnoreCase(patronName)) {
+            borrowingPatron = patron;
+            break;
+        }
+    }
+
+    // Check if the patron was found
+    if (borrowingPatron == null) {
+        System.out.println("Patron not found: " + patronName);
+        return false;
+    }
+
+    // Update the item copies and add the item to the patron's borrowed list
+    itemToBorrow.setCopies(itemToBorrow.getCopies() - 1);
+    borrowingPatron.getBorrowedItems().add(itemToBorrow);
+
+    System.out.println("Item '" + title + "' successfully borrowed by " + patronName);
+    return true;
+}
+
+
+
     //Search methods:
     //Search by title
     public List<LibraryItem> searchByTitle(String title) {
