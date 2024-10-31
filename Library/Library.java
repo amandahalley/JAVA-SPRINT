@@ -249,7 +249,18 @@ public boolean borrowItem(String title, String patronName) {
     return false;
     }
 
+    // Method to find an author by their name within the Library class
+    public Author findAuthorByName(String name) {
+        for (Author author : authors) {
+            if (author.getName().equalsIgnoreCase(name)) {
+                return author;
+            }
+        }
+        return null; // Return null if no author is found
+}
 
+    
+    
     //A method to list all of the items in the Library
     public void listAllItems() {
         //if there are no items currently in library - print statement saying so

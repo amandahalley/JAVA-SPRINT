@@ -21,8 +21,16 @@ public class Author {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     public String getDateOfBirth() {
         return birthday;
+    }
+
+    public void setDateOfBirth(String dateOfBirth) {
+        this.birthday = dateOfBirth;
     }
 
     public List<LibraryItem> getWrittenItems() {

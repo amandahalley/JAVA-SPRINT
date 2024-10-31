@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import Library.Library;
 import Library.LibraryItem;
+import People.Author;
 import People.Patron;
 
 public class LibraryDemo {
@@ -191,6 +192,35 @@ public class LibraryDemo {
                         System.out.println("Patron not found.");
                     }
                     break;
+                case 11:
+                    System.out.print("Enter the name of the author: ");
+                    String authorName = scanner.nextLine();
+                    System.out.print("Enter the date of birth of the author: ");
+                    String authorDOB = scanner.nextLine();
+                    Author newAuthor = new Author(authorName, authorDOB);
+                    library.addAuthor(newAuthor);
+                    break;
+                case 12:
+                    System.out.print("Enter the name of the author to edit: ");
+                    String editAuthorName = scanner.nextLine();
+                    Author authorToEdit = library.findAuthorByName(editAuthorName);
+                    if (authorToEdit != null) {
+                        System.out.print("Enter new name (current: " + authorToEdit.getName() + "): ");
+                        String newAuthorName = scanner.nextLine();
+                        if (!newAuthorName.isEmpty()) {
+                            authorToEdit.setName(newAuthorName);
+                        }
+                        System.out.print("Enter new date of birth (current: " + authorToEdit.getDateOfBirth() + "): ");
+                        String newDOB = scanner.nextLine();
+                        if (!newDOB.isEmpty()) {
+                            authorToEdit.setDateOfBirth(newDOB);
+                        }
+                        System.out.println("Author updated successfully.");
+                    } else {
+                        System.out.println("Author not found.");
+                    }
+                    break;
+
 
 
 
