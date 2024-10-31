@@ -220,6 +220,25 @@ public class LibraryDemo {
                         System.out.println("Author not found.");
                     }
                     break;
+                case 13:
+                    System.out.print("Enter the name of the author to delete: ");
+                    String deleteAuthorName = scanner.nextLine();
+                    if (library.deleteAuthor(deleteAuthorName)) {
+                        System.out.println("Author deleted successfully.");
+                    } else {
+                        System.out.println("Author not found.");
+                    }
+                    break;
+                case 14:
+                    System.out.print("Enter the name of the patron: ");
+                    String inputPatronName = scanner.nextLine();
+                    System.out.print("Enter the address of the patron: ");
+                    String inputPatronAddress = scanner.nextLine();
+                    System.out.print("Enter the phone number of the patron: ");
+                    String inputPatronPhone = scanner.nextLine();
+                    Patron newPatron = new Patron(inputPatronName, inputPatronAddress, inputPatronPhone);
+                    library.addPatron(newPatron);
+                    break;
 
 
 
