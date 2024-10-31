@@ -239,6 +239,31 @@ public class LibraryDemo {
                     Patron newPatron = new Patron(inputPatronName, inputPatronAddress, inputPatronPhone);
                     library.addPatron(newPatron);
                     break;
+                case 15:
+                    System.out.print("Enter the name of the patron to edit: ");
+                    String editPatronName = scanner.nextLine();
+                    Patron patronToEdit = library.findPatronByName(editPatronName);
+                    if (patronToEdit != null) {
+                        System.out.print("Enter new name (current: " + patronToEdit.getName() + "): ");
+                        String newPatronName = scanner.nextLine();
+                        if (!newPatronName.isEmpty()) {
+                            patronToEdit.setName(newPatronName);
+                        }
+                        System.out.print("Enter new address (current: " + patronToEdit.getAddress() + "): ");
+                        String newAddress = scanner.nextLine();
+                        if (!newAddress.isEmpty()) {
+                            patronToEdit.setAddress(newAddress);
+                        }
+                        System.out.print("Enter new phone number (current: " + patronToEdit.getPhoneNumber() + "): ");
+                        String newPhone = scanner.nextLine();
+                        if (!newPhone.isEmpty()) {
+                            patronToEdit.setPhoneNumber(newPhone);
+                        }
+                        System.out.println("Patron updated successfully.");
+                    } else {
+                        System.out.println("Patron not found.");
+                    }
+                    break;
 
 
 

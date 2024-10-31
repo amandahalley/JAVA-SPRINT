@@ -20,8 +20,17 @@ public Patron(String name, String address, String phoneNumber) {
     public String getAddress() { return address; }
     public String getPhoneNumber() { return phoneNumber; }
     public List<LibraryItem> getBorrowedItems() { return borrowedItems; }
-  
-  
+    
+    public void setName(String name) {
+        this.name = name;
+    }
+    public void setAddress(String address) {
+        this.address = address;
+    }
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+    
     public void borrowItem(LibraryItem item) {
         if (item.getCopies() > 0) {
             borrowedItems.add(item);
