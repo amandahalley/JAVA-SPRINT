@@ -1,3 +1,4 @@
+import java.util.List;
 import java.util.Scanner;
 
 import Library.Library;
@@ -133,12 +134,25 @@ public class LibraryDemo {
                     library.returnItem(returnTitle, returnPatronName);
                     break;
                 case 6:
-                    System.out.println("Exiting the system. Goodbye!");
+                    library.listAllItems();
                     break;
-                default:
-                    System.out.println("Invalid choice. Please enter a number between 1 and 6.");
+                case 7:
+                    System.out.print("Enter the title of the library item to search for: ");
+                    String searchTitle = scanner.nextLine();
+                    List<LibraryItem> itemsByTitle = library.searchByTitle(searchTitle);
+                    if (itemsByTitle.isEmpty()) {
+                        System.out.println("No items found with the title: " + searchTitle);
+                    } else {
+                        System.out.println("Items found:");
+                        for (LibraryItem item : itemsByTitle) {
+                            System.out.println(item);
+                        }
+                    }
+                    break;
+
+
             }
-        } while (choice != 6);
+        } while (choice != 17);
 
         scanner.close();
     }
