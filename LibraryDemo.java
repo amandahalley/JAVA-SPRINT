@@ -108,9 +108,15 @@ public class LibraryDemo {
 
 
                 case 3:
-                    System.out.println("Deleting a library item...");
-                    // Add logic to delete a library item
+                    System.out.print("Enter the ID of the library item to delete: ");
+                    String deleteItemID = scanner.nextLine();
+                    if (library.deleteItem(deleteItemID)) {
+                        System.out.println("Library item deleted successfully.");
+                    } else {
+                        System.out.println("Library item with ID " + deleteItemID + " not found.");
+                    }
                     break;
+
                 case 4:
                     System.out.println("Borrowing a library item...");
                     // Add logic to borrow a library item
