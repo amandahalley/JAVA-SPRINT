@@ -213,6 +213,17 @@ public boolean borrowItem(String title, String patronName) {
     return false;
 }
 
+
+    // Method to find a patron by their name within the Library class
+    public Patron findPatronByName(String name) {
+        for (Patron patron : patrons) {
+            if (patron.getName().equalsIgnoreCase(name)) {
+                return patron;
+            }
+        }
+        return null; // Return null if no patron is found
+}
+
     // Author management methods
     // Add author to collection
     public void addAuthor(Author author) {

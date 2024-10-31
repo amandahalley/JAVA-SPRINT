@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 import Library.Library;
 import Library.LibraryItem;
+import People.Patron;
 
 public class LibraryDemo {
     public static void main(String[] args) {
@@ -149,6 +150,50 @@ public class LibraryDemo {
                         }
                     }
                     break;
+                case 8:
+                    System.out.print("Enter the author name to search for: ");
+                    String searchAuthor = scanner.nextLine();
+                    List<LibraryItem> itemsByAuthor = library.searchByAuthor(searchAuthor);
+                    if (itemsByAuthor.isEmpty()) {
+                        System.out.println("No items found for author: " + searchAuthor);
+                    } else {
+                        System.out.println("Items found:");
+                        for (LibraryItem item : itemsByAuthor) {
+                            System.out.println(item);
+                        }
+                    }
+                    break;
+                case 9:
+                    System.out.print("Enter the ISBN of the library item to search for: ");
+                    String searchISBN = scanner.nextLine();
+                    LibraryItem itemByISBN = library.searchByISBN(searchISBN);
+                    if (itemByISBN != null) {
+                        System.out.println("Item found: " + itemByISBN);
+                    } else {
+                        System.out.println("No item found with ISBN: " + searchISBN);
+                    }
+                    break;
+                case 10:
+                    System.out.print("Enter the name of the patron: ");
+                    String patronToList = scanner.nextLine();
+                    Patron foundPatron = library.findPatronByName(patronToList);
+                    if (foundPatron != null) {
+                        System.out.println("Borrowed items for " + patronToList + ":");
+                        List<LibraryItem> borrowedItems = foundPatron.getBorrowedItems();
+                        if (borrowedItems.isEmpty()) {
+                            System.out.println("No items borrowed.");
+                        } else {
+                            for (LibraryItem borrowedItem : borrowedItems) {
+                                System.out.println(borrowedItem);
+                            }
+                        }
+                    } else {
+                        System.out.println("Patron not found.");
+                    }
+                    break;
+
+
+
 
 
             }
