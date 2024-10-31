@@ -1,4 +1,4 @@
-# Lbrary Management System
+# Library Management System
 This project is designed to manage library items, authors, and patrons efficiently. This application allows librarians to handle basic library functions, such as adding and managing items, authors, and patrons, as well as borrowing and returning items.
 ## Features
 - **Library Item Management**
