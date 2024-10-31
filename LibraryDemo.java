@@ -292,8 +292,8 @@ public class LibraryDemo {
 
     private static void initializeLibraryData(Library library) {
         // Create and add some library items
-        LibraryItem item1 = new Book("1", "Effective Java", "Joshua Bloch", "9780134686097", "Addison-Wesley", 5, null);
-        LibraryItem item2 = new Book("2", "Clean Code", "Robert C. Martin", "9780136083238", "Prentice Hall", 3, null);
+        LibraryItem item1 = new Book("1", "Effective Java", "Joshua Bloch", "9780134686097", "Addison-Wesley", 5, "Printed");
+        LibraryItem item2 = new Book("2", "Clean Code", "Robert C. Martin", "9780136083238", "Prentice Hall", 3, "Electronic");
         library.addItem(item1);
         library.addItem(item2);
 

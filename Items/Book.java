@@ -2,9 +2,9 @@ package Items;
 import Library.LibraryItem;
 
 public class Book extends LibraryItem {
-    private String Printed= "Printed";
-    private String Audio = "Audio";
-    private String Electronic = "Electronic";
+    public static String Printed= "Printed";
+    public static String Audio = "Audio";
+    public static String Electronic = "Electronic";
     private String format;
 
     //Constructor 
@@ -20,15 +20,17 @@ public class Book extends LibraryItem {
 
     //set format wit validation
     public void setFormat(String format) {
-        if (!format.equals(Printed) && !format.equals(Electronic) && !format.equals(Audio)) {
-            throw new IllegalArgumentException("Invalid format - Must be Printed, Electronic, or Audio.");
+        if (format == null) {
+            throw new IllegalArgumentException("Format cannot be null");
         }
-        this.format = format;
-    }
+        if (format.equals(Printed) || format.equals(Audio) || format.equals(Electronic)) {
+            this.format = format;
+        } else {
+            throw new IllegalArgumentException("Invalid book format: " + format);
+        }};
 
     @Override
     public String toString() {
         return super.toString() + ", format = '" + format + '\''; 
-    }
-};
+    }};
 
