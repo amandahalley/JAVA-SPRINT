@@ -27,6 +27,17 @@ public class Library {
         }
     }
 
+   // Method to find an item by its ID within the Library class
+    public LibraryItem findItemById(String itemID) {
+        for (LibraryItem item : items) {
+            if (item.getID().equals(itemID)) {
+                return item;
+            }
+        }
+        return null; // Return null if no item is found
+    }
+
+   
     //Edit item - updates item existing in collection by matching itemID and updating items attributes
     public boolean editItem(String itemID, LibraryItem updatedItem) {
         for (LibraryItem item : items) {  //cycles through items and finds matching id then updates properties with new details
