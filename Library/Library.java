@@ -21,7 +21,7 @@ public class Library {
     public void addItem(LibraryItem item) {
         if (item != null) {
             items.add(item);
-        System.out.println("Item: " + item.getTitle() + "has been successfully added to the Library.");        
+        System.out.println("Item: " + item.getTitle() + " " + "has been successfully added to the Library.");        
     } else {
         System.out.println("Can not add item. Please try again.");
         }
